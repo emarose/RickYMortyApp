@@ -16,16 +16,15 @@ const Species = ({ updateSpecies, updatePageNumber }) => {
     "Planet",
   ];
   return (
-    <div className="accordion-item ">
+    <div className="accordion-item">
       <h2 className="accordion-header" id="headingTwo">
         <button
-          className="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapseTwo"
+          class="btn btn-toggle align-items-center rounded collapsed"
           aria-expanded="false"
-          aria-controls="collapseTwo"
-        >
+          data-bs-target="#collapseTwo"
+          data-bs-toggle="collapse"
+          type="button"
+          aria-controls="collapseTwo">
           Species
         </button>
       </h2>
@@ -35,7 +34,7 @@ const Species = ({ updateSpecies, updatePageNumber }) => {
         aria-labelledby="headingTwo"
         data-bs-parent="#accordionExample"
       >
-        <div className="accordion-body d-flex flex-wrap gap-3">
+        <div className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
           {species.map((item, index) => {
             return (
               <FilterBTN
