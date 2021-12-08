@@ -1,0 +1,32 @@
+
+.card {
+  width: 270px;
+  border-radius: 10px;
+  transition: 0.5s;
+  box-shadow: 0 0 5px rgba(0,0,0,0.8);
+}
+
+.card:hover {
+  transform: scale(1.0150);
+  opacity: 0.6;
+  
+}
+
+.content { 
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.content h1{
+  font-size: 1.2rem !important;
+}
+.img {
+  border-radius: 10px 10px 0 0;
+}
+
+.badge {
+  bottom: 110px;
+  left: 20px;
+  font-size: 17px;
+}
