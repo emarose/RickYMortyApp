@@ -3,6 +3,8 @@ import Gender from "./category/Gender";
 import Species from "./category/Species";
 import Status from "./category/Status";
 import "./css/filter.css";
+
+/* Clear filters */ 
 const Filter = ({
   pageNumber,
   updatePageNumber,
@@ -27,6 +29,7 @@ const Filter = ({
       >
         Clear Filters
       </div>
+      {/* Accordion filters */}
       <div className="accordion" id="accordionExample">
         <Status
           updatePageNumber={updatePageNumber}

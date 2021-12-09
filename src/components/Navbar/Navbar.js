@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-
+import './styleNav.css';
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
@@ -8,14 +8,7 @@ const Navbar = () => {
         <Link to="/" className="navbar-brand fs-3 ubuntu">
           Rick & Morty <span className="text-primary">APP</span>
         </Link>
-        <style jsx>{`
-          button[aria-expanded="false"] > .close {
-            display: none;
-          }
-          button[aria-expanded="true"] > .open {
-            display: none;
-          }
-        `}</style>
+
         <button
           className="navbar-toggler bg-primary border-0"
           type="button"
@@ -29,9 +22,8 @@ const Navbar = () => {
           <span class="fas fa-times close text-dark"></span>
         </button>
         <div
-          className="collapse navbar-collapse justify-content-end"
-          id="navbarNavAltMarkup"
-        >
+          className="collapse navbar-collapse justify-content-between"
+          id="navbarNavAltMarkup">
           <div className="navbar-nav fs-5">
             <NavLink to="/" className="nav-link">
               Characters
@@ -47,6 +39,13 @@ const Navbar = () => {
               Location
             </NavLink>
           </div>
+          <button
+            className="btn btn-primary justify-content-end"
+            to=""
+          >
+            Login
+          </button>
+
         </div>
       </div>
     </nav>

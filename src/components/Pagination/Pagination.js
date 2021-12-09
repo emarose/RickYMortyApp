@@ -1,40 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import ReactPaginate from "react-paginate";
+import './stylePagination.css';
 
 const Pagination = ({ pageNumber, info, updatePageNumber }) => {
+
+  /* PageChange = Page + NextPage */
   let pageChange = (data) => {
     updatePageNumber(data.selected + 1);
   };
-
+  /* Change Width Range Page Numbers */
   const [width, setWidth] = useState(window.innerWidth);
   const updateDimensions = () => {
     setWidth(window.innerWidth);
   };
+
   useEffect(() => {
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
   return (
-    <>
-      <style jsx>
-        {`
-          @media (max-width: 768px) {
-            .pagination {
-              font-size: 12px;
-            }
-            .next,
-            .prev {
-              display: none;
-            }
-          }
-          @media (max-width: 768px) {
-            .pagination {
-              font-size: 14px;
-            }
-          }
-        `}
-      </style>
+    <Fragment>
       <ReactPaginate
         className="pagination justify-content-center my-4 gap-4"
         nextLabel="Next"
@@ -50,7 +36,7 @@ const Pagination = ({ pageNumber, info, updatePageNumber }) => {
         pageClassName="page-item"
         pageLinkClassName="page-link"
       />
-    </>
+    </Fragment>
   );
 };
 

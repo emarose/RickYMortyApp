@@ -1,0 +1,17 @@
+/* Styles Pagination Mobile */
+@media (max-width: 768px) {
+    .pagination {
+        font-size: 12px;
+    }
+
+    .next,
+    .prev {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .pagination {
+        font-size: 14px;
+    }
+}
