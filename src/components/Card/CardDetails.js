@@ -1,21 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import './CardDetails.css'
+import axios from "axios";
 
 const CardDetails = () => {
   let { id } = useParams();
 
-  let [fetchedData, updateFetchedData] = useState([]);
-  let { name, location, origin, gender, image, status, species } = fetchedData;
+  let [axiosData, setAxios] = useState([]);
+  let { name, location, origin, gender, image, status, species } = axiosData;
 
-  let api = `https://rickandmortyapi.com/api/character/${id}`;
+
+  const rickAndMortyHTPP = axios.create({
+    baseURL: `https://rickandmortyapi.com/api/character`
+ });
+
+ let params=`${id}`;
+  
 
   useEffect(() => {
     (async function () {
-      let data = await fetch(api).then((res) => res.json());
-      updateFetchedData(data);
+      
+      await rickAndMortyHTPP.get(`${params}`)
+      .then(response=>setAxios(response.data))
+      
     })();
-  }, [api]);
+  }, [params]);
 
   return (
     <div className="container d-flex justify-content-center mb-5">

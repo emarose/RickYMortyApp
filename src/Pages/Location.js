@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card/Card";
 import InputGroup from "../components/Filter/category/InputGroup";
+import axios from "axios";
 
 const Location = () => {
   let [results, setResults] = React.useState([]);
@@ -8,22 +9,47 @@ const Location = () => {
   let { dimension, type, name } = info;
   let [number, setNumber] = useState(1);
 
-  let api = `https://rickandmortyapi.com/api/location/${number}`;
+  // let api = `https://rickandmortyapi.com/api/location/${number}`;
+
+  const rickAndMortyHTPP = axios.create({
+    baseURL: `https://rickandmortyapi.com/api/location`
+ });
+ const rickAndMorty2HTPP = axios.create();
+
+  let params=`${number}`;
+  let url="";
+  let aux=[];
 
   useEffect(() => {
     (async function () {
-      let data = await fetch(api).then((res) => res.json());
-      setInfo(data);
 
-      let a = await Promise.all(
-        data.residents.map((x) => {
+      await rickAndMortyHTPP.get(`${params}`)
+      .then(response=>{
+        setInfo(response.data)
+        url=response.data.residents;
+      })
 
-          return fetch(x).then((res) => res.json());
-        })
-      );
-      setResults(a);
+     await url.map((el)=>{
+
+      rickAndMorty2HTPP.get(el)
+      .then(response=>{
+        aux=[...aux,response.data]
+        setResults(aux);
+      })
+     })
+
+      // let data = await fetch(api).then((res) => res.json());
+      // setInfo(data);
+
+      // let a = await Promise.all(
+      //   data.residents.map((x) => {
+
+      //     return fetch(x).then((res) => res.json());
+      //   })
+      // );
+      // setResults(a);
     })();
-  }, [api]);
+  }, [params]);
 
   return (
     <div className="container">

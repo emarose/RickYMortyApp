@@ -9,8 +9,8 @@ export const Home = () => {
     let [status, updateStatus] = useState("");
     let [gender, updateGender] = useState("");
     let [species, updateSpecies] = useState("");
-    let [fetchedData, updateFetchedData] = useState([]);
-    let { info, results } = fetchedData;
+    let [axiosData, setAxios] = useState([]);
+    let { info, results } = axiosData;
   
     const rickAndMortyHTPP = axios.create({
         baseURL: `https://rickandmortyapi.com/api/character`
@@ -18,16 +18,13 @@ export const Home = () => {
 
     let params=`/?page=${pageNumber}&status=${status}&gender=${gender}&species=${species}`;
 
-    // let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&status=${status}&gender=${gender}&species=${species}`;
+    
   
     useEffect(() => {
       ( async function () {
         
         await rickAndMortyHTPP.get(`${params}`)
-        .then(response=>updateFetchedData(response.data))
-        
-        // let data = await fetch(api).then((res) => res.json());
-        // updateFetchedData(data);
+        .then(response=>setAxios(response.data))
       })();
     }, [params]);
 
