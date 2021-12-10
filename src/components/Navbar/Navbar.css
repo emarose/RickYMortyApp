@@ -18,7 +18,39 @@ button[aria-expanded="true"]>.open {
     color: #fff;
     font-size: 1.4rem;
 }
-
+/*----------------------------------------------------------------*/
+.nav-link{
+    margin: 0 10px;
+    z-index: 10;
+}
+.navbar-nav{
+    position: relative;
+}
+.active{
+    border-bottom: none;
+    color: var(--bs-white)!important ;
+}
+.indicator{
+    content: '';
+    position: absolute;
+    background-color: #212529;
+    border: var(--blue-clr) 5px solid;
+    border-radius: 50px;
+    transition: 0.5s;
+    width: 130px;
+    height: 50px;
+    top: 0;
+    z-index: 0;
+}
+.navbar-nav a:nth-child(1).active ~ .indicator{
+    transform: translateX(calc(91% * 0));
+}
+.navbar-nav a:nth-child(2).active ~ .indicator{
+    transform: translateX(calc(91% * 1));
+}
+.navbar-nav a:nth-child(3).active ~ .indicator{
+    transform: translateX(calc(88% * 2));
+}
 /* .navbarBrand{
     font-family: var(--font-bold);
     background-image: url(./RM\ pattern.png);
