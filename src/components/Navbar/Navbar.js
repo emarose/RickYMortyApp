@@ -7,7 +7,7 @@ const Navbar = () => {
     <nav className="navbar mx-0 navbar-expand-lg navbar-dark bg-dark mb-4">
       <div className="container">
         <Link to="/" className="navbar-brand fs-3 ubuntu">
-          <h1 className="navbarBrand">Rick & Morty <span>Db</span></h1>
+          <h1 className="navbarBrand">Rick & Morty</h1>
         </Link>
 
         <button

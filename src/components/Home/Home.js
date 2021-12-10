@@ -30,11 +30,8 @@ export const Home = () => {
   return (
     <div className="container">
       <div className="titleWrap">
-        <h1 className="homeTitle text-center">Rick & Morty
-          <p className="fs-2">Database</p>
-        </h1>
+        <h1 className="homeTitle text-center">Rick & Morty</h1>
       </div>
-      <h1 className="text-center mb-5">Characters</h1>
       <div className="row">
         <Filter
           pageNumber={pageNumber}
@@ -43,7 +40,7 @@ export const Home = () => {
           updateGender={updateGender}
           updateSpecies={updateSpecies}
           updatePageNumber={updatePageNumber} />
-        <Create />
+        {/*   <Create /> */}
         <div className="col-lg-8 col-12">
           <div className="gridContainer">
             <Card page="/" results={results} />
