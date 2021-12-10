@@ -1,9 +1,10 @@
-.titleWrap{
+.titleWrap {
   background-color: #212529;
   margin: 5em auto;
   width: 100%;
 }
-.homeTitle{
+
+.homeTitle {
   letter-spacing: 2px;
   font-family: var(--font-bold);
   font-size: clamp(6rem, 5vw, 4rem);
@@ -11,32 +12,33 @@
   background-position: center -170px;
   background-size: cover;
   background-clip: text;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 @media screen and(max-width:500px) {
-  .homeTitle{
+  .homeTitle {
     font-size: smaller;
   }
 }
 
-.gridContainer{
+.gridContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap:30px 0;
+  gap: 30px 0;
 }
 
-.filterContainer{
+.filterContainer {
   display: flex;
 }
 
 @media screen and (max-width:1000px) {
-  .gridContainer{
+  .gridContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
   }
-  .filterContainer{
+
+  .filterContainer {
     flex-direction: column;
   }
 }

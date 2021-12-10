@@ -8,12 +8,13 @@ button[aria-expanded="true"]>.open {
     display: none;
 }
 
-.navbarBrand{
+.navbarBrand {
     font-family: var(--font-bold);
     color: var(--blue-clr);
     letter-spacing: 2px;
 }
-.navbarBrand span{
+
+.navbarBrand span {
     color: #fff;
     font-size: 1.4rem;
 }

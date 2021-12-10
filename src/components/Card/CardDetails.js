@@ -4,25 +4,24 @@ import './CardDetails.css'
 import axios from "axios";
 
 const CardDetails = () => {
-  let { id } = useParams();
 
+  let { id } = useParams();
   let [axiosData, setAxios] = useState([]);
   let { name, location, origin, gender, image, status, species } = axiosData;
 
 
   const rickAndMortyHTPP = axios.create({
     baseURL: `https://rickandmortyapi.com/api/character`
- });
+  });
 
- let params=`${id}`;
-  
+  let params = `${id}`;
 
   useEffect(() => {
     (async function () {
-      
+
       await rickAndMortyHTPP.get(`${params}`)
-      .then(response=>setAxios(response.data))
-      
+        .then(response => setAxios(response.data))
+
     })();
   }, [params, rickAndMortyHTPP]);
 
@@ -30,7 +29,6 @@ const CardDetails = () => {
     <div className="container d-flex justify-content-center mb-5">
       <div className="d-flex flex-column">
         <h1 className="text-center">{name}</h1>
-
         <img className="img-fluid" src={image} alt="" />
         {(() => {
           if (status === "Dead") {
@@ -43,7 +41,7 @@ const CardDetails = () => {
         })()}
         <div className="content">
           <div>
-            <span className="fw-bold">Gender : </span>
+            <span className="fw-bold">Gender: </span>
             {gender}
           </div>
           <div>

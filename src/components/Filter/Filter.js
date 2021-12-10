@@ -4,7 +4,7 @@ import Species from "./category/Species";
 import Status from "./category/Status";
 import "./css/filter.css";
 
-/* Clear filters */ 
+/* Clear filters */
 const Filter = ({
   pageNumber,
   updatePageNumber,
@@ -17,7 +17,7 @@ const Filter = ({
     updateGender("");
     updateSpecies("");
     updatePageNumber(1);
-    window.location.reload(false);
+    /* window.location.reload(true); */
   };
   return (
     <div className="col-lg-3 col-12 mb-5">

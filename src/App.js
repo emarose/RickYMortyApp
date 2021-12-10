@@ -22,15 +22,12 @@ function App() {
           <Route path="/:id" element={<CardDetails />} />
           <Route path="/episodes" element={<Episodes />} />
           <Route path="/episodes/:id" element={<CardDetails />} />
-
           <Route path="/location" element={<Location />} />
           <Route path="/location/:id" element={<CardDetails />} />
-
-
-          <Route path="*" element={<NotFound/>} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-    </Router>  
+    </Router>
   );
 }
 
