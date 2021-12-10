@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "../Card/Card";
 import Pagination from "../Pagination/Pagination";
 import Filter from "../Filter/Filter";
+import Create from "../Custom/Create/Create"
 import axios from "axios";
 import './Home.css'
 
@@ -27,14 +28,14 @@ export const Home = () => {
   }, [rickAndMortyHTPP, params]);
 
   return (
-    <>
+    <div className="container">
       <div className="titleWrap">
         <h1 className="homeTitle text-center">Rick & Morty
           <p className="fs-2">Database</p>
         </h1>
       </div>
-      <h2 className="text-center mb-5">Characters</h2>
-      <div className="filterContainer">
+      <h1 className="text-center mb-5">Characters</h1>
+      <div className="row">
         <Filter
           pageNumber={pageNumber}
           status={status}
@@ -42,9 +43,11 @@ export const Home = () => {
           updateGender={updateGender}
           updateSpecies={updateSpecies}
           updatePageNumber={updatePageNumber} />
-
-        <div className="gridContainer">
-          <Card page="/" results={results} />
+        <Create />
+        <div className="col-lg-8 col-12">
+          <div className="gridContainer">
+            <Card page="/" results={results} />
+          </div>
         </div>
       </div>
 
@@ -53,6 +56,6 @@ export const Home = () => {
         pageNumber={pageNumber}
         updatePageNumber={updatePageNumber}
       />
-    </>
+    </div>
   );
 };
