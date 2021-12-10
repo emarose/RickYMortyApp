@@ -69,7 +69,7 @@ const Episodes = () => {
           <InputGroup name="Episode" changeID={setID} total={51} />
         </div>
         <div className="col-lg-8 col-12">
-          <div className="row">
+          <div className="gridContainer">
             <Card page="/episodes/" results={results} />
           </div>
         </div>

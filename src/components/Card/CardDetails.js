@@ -24,7 +24,7 @@ const CardDetails = () => {
       .then(response=>setAxios(response.data))
       
     })();
-  }, [params]);
+  }, [params, rickAndMortyHTPP]);
 
   return (
     <div className="container d-flex justify-content-center mb-5">

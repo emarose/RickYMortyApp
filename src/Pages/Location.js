@@ -72,7 +72,7 @@ const Location = () => {
           <InputGroup name="Location" changeID={setNumber} total={126} />
         </div>
         <div className="col-lg-8 col-12">
-          <div className="row">
+          <div className="gridContainer">
             <Card page="/location/" results={results} />
           </div>
         </div>

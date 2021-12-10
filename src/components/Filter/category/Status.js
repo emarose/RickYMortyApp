@@ -20,7 +20,7 @@ const Status = ({ updateStatus, updatePageNumber }) => {
         id="collapseOne"
         className="accordion-collapse collapse"
         aria-labelledby="headingOne"
-        data-bs-parent="#accordionExample"
+        data-bs-parent="#accordion"
       >
         <div className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
           {status.map((item, index) => (

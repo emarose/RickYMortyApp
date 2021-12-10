@@ -32,7 +32,7 @@ const Species = ({ updateSpecies, updatePageNumber }) => {
         id="collapseTwo"
         className="accordion-collapse collapse"
         aria-labelledby="headingTwo"
-        data-bs-parent="#accordionExample"
+        data-bs-parent="#accordion"
       >
         <div className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
           {species.map((item, index) => {

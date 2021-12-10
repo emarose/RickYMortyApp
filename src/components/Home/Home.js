@@ -3,6 +3,7 @@ import Card from "../Card/Card";
 import Pagination from "../Pagination/Pagination";
 import Filter from "../Filter/Filter";
 import axios from "axios";
+import './Home.css'
 
 export const Home = () => {
     let [pageNumber, updatePageNumber] = useState(1);
@@ -13,47 +14,45 @@ export const Home = () => {
     let { info, results } = axiosData;
   
     const rickAndMortyHTPP = axios.create({
-        baseURL: `https://rickandmortyapi.com/api/character`
+      baseURL: `https://rickandmortyapi.com/api/character`
      });
 
     let params=`/?page=${pageNumber}&status=${status}&gender=${gender}&species=${species}`;
 
-    
-  
     useEffect(() => {
       ( async function () {
-        
         await rickAndMortyHTPP.get(`${params}`)
         .then(response=>setAxios(response.data))
       })();
-    }, [params]);
+    }, [rickAndMortyHTPP, params]);
 
     return (
-      <div className="App">
-        <h1 className="text-center my-5">Characters</h1>
-        
-        <div className="container">
-          <div className="row">
-            <Filter
-              pageNumber={pageNumber}
-              status={status}
-              updateStatus={updateStatus}
-              updateGender={updateGender}
-              updateSpecies={updateSpecies}
-              updatePageNumber={updatePageNumber}
-            />
-            <div className="col-md-8 col-sm-12">
-              <div className="row">
-                <Card page="/" results={results} />
-              </div>
+      <>
+      <div className="titleWrap">
+        <h1 className="homeTitle text-center">Rick & Morty 
+        <p className="fs-2">Database</p>
+        </h1>
+      </div>
+        <h2 className="text-center mb-5">Characters</h2>
+        <div className="filterContainer">
+          <Filter
+            pageNumber={pageNumber}
+            status={status}
+            updateStatus={updateStatus}
+            updateGender={updateGender}
+            updateSpecies={updateSpecies}
+            updatePageNumber={updatePageNumber}/>
+
+            <div className="gridContainer">
+              <Card page="/" results={results} />
             </div>
           </div>
-        </div>
-        <Pagination
-          info={info}
-          pageNumber={pageNumber}
-          updatePageNumber={updatePageNumber}
-        />
-      </div>
+
+      <Pagination
+        info={info}
+        pageNumber={pageNumber}
+        updatePageNumber={updatePageNumber}
+      />
+      </>
     );
   };

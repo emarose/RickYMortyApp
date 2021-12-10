@@ -21,7 +21,7 @@ const Gender = ({ updateGender, updatePageNumber }) => {
         id="collapseThree"
         className="accordion-collapse collapse"
         aria-labelledby="headingThree"
-        data-bs-parent="#accordionExample"
+        data-bs-parent="#accordion"
       >
         <div className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
           {genders.map((items, index) => {

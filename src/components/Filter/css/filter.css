@@ -8,6 +8,10 @@
   border: 0;
 }
 
+.btn-toggle:focus{
+  box-shadow: none !important;
+}
+
 .btn-toggle::before {
   width: 1.25em;
   line-height: 0;
@@ -18,4 +22,34 @@
 
 .btn-toggle[aria-expanded="true"]::before {
   transform: rotate(90deg);
+}
+
+#accordion{
+  margin: 0 auto;
+  width: 75%;
+}
+.form-check:hover{
+  background-color: rgba(0,170,194,0.1);
+}
+.clearFilters{
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  color:var(--blue-clr);
+  margin: 20px auto;
+  width: 50%;
+  background-color: rgba(15,15,15);
+  font-weight: 600;
+  letter-spacing: 0.0135em;
+  transition: 0.2s;
+  
+}
+
+.clearFilters:hover{
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  color:black;
+  margin: 20px auto;
+  width: 50%;
+  background-color: var(--blue-clr);
+  box-shadow: 0 0 3px var(--green-clr);
 }

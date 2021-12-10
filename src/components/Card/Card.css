@@ -1,20 +1,19 @@
 .card {
-  width: 100%;
+  min-width: 230px;
   height: 100%;
   border-radius: 10px;
-  transition: 0.5s;
-  box-shadow: 0 0 5px rgba(0,0,0,0.8);
+  transition: transform 0.1s;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 .badge {
   top: 10px;
   left: 20px;
-  font-size: 17px;
+  font-size: 1.4rem;
 }
 
 .card:hover {
-  transform: scale(1.0150);
-  opacity: 0.6;
-  
+  transform: scale(1.0125);
+  box-shadow: 0 0 7px rgba(0,0,0,0.8);
 }
 
 .content { 

@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap');
 
+:root{
+  --blue-clr: #00aac2;
+  --green-clr: #7af717;
+  --font-bold: 'Montserrat', sans-serif;
+}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(30,30,30,0.4) !important;
+  background-color: rgba(100,100,100,0.1) !important;
+ 
 }
 
 .ubuntu {
@@ -12,6 +19,5 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }

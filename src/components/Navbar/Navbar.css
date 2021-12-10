@@ -1,0 +1,28 @@
+/* Styles Hamburguer Mobile */
+
+button[aria-expanded="false"]>.close {
+    display: none;
+}
+
+button[aria-expanded="true"]>.open {
+    display: none;
+}
+
+.navbarBrand{
+    font-family: var(--font-bold);
+    color: var(--blue-clr);
+    letter-spacing: 2px;
+}
+.navbarBrand span{
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+/* .navbarBrand{
+    font-family: var(--font-bold);
+    background-image: url(./RM\ pattern.png);
+    background-size: cover;
+    background-clip: text;
+    color: transparent;
+    font-weight: bolder;
+} */
