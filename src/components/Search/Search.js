@@ -3,9 +3,7 @@ import { Button } from "../Button/Button";
 import "./Search.css";
 
 const Search = ({ setSearch, updatePageNumber }) => {
-  let searchBtn = (e) => {
-    e.preventDefault();
-  };
+
   return (
     <form className="d-flex flex-sm-row flex-column align-items-center justify-content-center gap-4 mb-5"
     >
@@ -18,12 +16,7 @@ const Search = ({ setSearch, updatePageNumber }) => {
         className="searchInput"
         type="text"
       />
-      <button
-        onClick={searchBtn}
-        className="searchBTN btn btn-primary fs-5"
-      >
-        Search
-      </button>
+   
       <Button class="searchBTN btn btn-primary fs-5" content="+" />
     </form>
   );

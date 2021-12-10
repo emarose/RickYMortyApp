@@ -21,7 +21,7 @@ export const Home = () => {
     baseURL: `https://rickandmortyapi.com/api/character`
   });
 
-  let params = `/?page=${pageNumber}&status=${status}&gender=${gender}&species=${species}`;
+  let params = `/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
   useEffect(() => {
     (async function () {
