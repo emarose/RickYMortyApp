@@ -36,10 +36,10 @@
 .clearFilters {
   padding: 0.5em 1em;
   border-radius: 5px;
-  color: var(--blue-clr);
+  color: var(--bs-white);
   margin: 20px auto;
   width: 50%;
-  background-color: rgba(15, 15, 15);
+  background-color: #212529;
   font-weight: 600;
   letter-spacing: 0.0135em;
   transition: 0.2s;

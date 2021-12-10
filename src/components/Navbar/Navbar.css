@@ -50,7 +50,7 @@ button[aria-expanded="true"]>.open {
     border: none;
     font-weight: 500;
     border-radius: 8px;
-    transition: 0.3s all;
+    transition: 0.3s ;
 }
 
 .loginRegisterContainer a:hover{
@@ -85,10 +85,11 @@ button[aria-expanded="true"]>.open {
     content:'';
     position:absolute;
     background-color: #212529;
-    border: var(--blue-clr) 5px solid;
+    border-top: var(--blue-clr) 5px solid;
+    border-bottom: var(--blue-clr) 5px solid;
     border-radius: 50px;
     transition: 0.5s;
-    width: 130px;
+    width: 28%;
     height: 50px;
     top: 0;
     left: 55px;
@@ -98,10 +99,10 @@ button[aria-expanded="true"]>.open {
     transform: translateX(calc(100% * 0));
 }
 .navbar-nav a:nth-child(2).active ~ .indicator{
-    transform: translateX(calc(120% * 1));
+    transform: translateX(calc(100% * 1));
 }
 .navbar-nav a:nth-child(3).active ~ .indicator{
-    transform: translateX(calc(118% * 2));
+    transform: translateX(calc(96% * 2));
 }
 
 @media screen and (max-width:1000px) {
