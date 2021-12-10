@@ -7,6 +7,12 @@ button[aria-expanded="false"]>.close {
 button[aria-expanded="true"]>.open {
     display: none;
 }
+.navbar{
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 100;
+}
 
 .navbarBrand {
     font-family: var(--font-bold);
@@ -19,11 +25,71 @@ button[aria-expanded="true"]>.open {
     font-size: 1.4rem;
 }
 
-/* .navbarBrand{
-    font-family: var(--font-bold);
-    background-image: url(./RM\ pattern.png);
-    background-size: cover;
-    background-clip: text;
-    color: transparent;
+.navbar-nav{
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-nav a{
+ margin: 0 1.5em;
+}
+.loginRegisterContainer{
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginRegisterContainer a{
+    margin: 0.5em 1em;
+    color:black !important;
+    background-color: var(--blue-clr);
+    border: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: 0.3s all;
+}
+
+.loginRegisterContainer a:hover{
+    color:var(--blue-clr) !important;
+    background-color: var(--dark-clr);
+    outline: 1px solid var(--blue-clr);
+}
+
+.nav-link{
+   color: var(--blue-clr) !important;
+   transition: 0.1s all;
+}
+
+.active{
     font-weight: bolder;
-} */
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--blue-clr) !important;
+}
+.navbar-toggler{
+    background-color: var(--blue-clr) !important;
+}
+
+.navbar-toggler:active{
+   box-shadow: none !important;
+   outline: none !important;
+}
+
+@media screen and (max-width:1000px) {
+
+    .loginRegisterContainer{
+       display: flex;
+       align-items: center;
+       justify-content: center;
+    }
+    .navbar-nav{
+        width: 100%;
+        margin:0 !important;
+    }
+    .loginRegisterContainer a{
+        margin-top: 2em;
+        margin-inline: 1em;
+    }
+}

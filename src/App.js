@@ -10,15 +10,20 @@ import Navbar from "./components/Navbar/Navbar";
 import NotFound from "./Pages/NotFound";
 import Episodes from "./Pages/Episodes";
 import Location from "./Pages/Location";
+import Login from './Pages/Login';
+import Register from "./Pages/Register";
 import CardDetails from "./components/Card/CardDetails";
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <div className="container">
+      <div className="container appContainer">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
           <Route path="/:id" element={<CardDetails />} />
           <Route path="/episodes" element={<Episodes />} />
           <Route path="/episodes/:id" element={<CardDetails />} />

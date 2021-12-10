@@ -1,5 +1,5 @@
 .titleWrap {
-  background-color: #212529;
+  background-color: var(--dark-clr);
   margin: 5em auto;
   width: 100%;
 }

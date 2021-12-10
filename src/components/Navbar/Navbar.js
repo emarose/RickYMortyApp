@@ -23,7 +23,7 @@ const Navbar = () => {
           <span class="fas fa-times close text-dark"></span>
         </button>
         <div
-          className="collapse navbar-collapse justify-content-between"
+          className="collapse navbar-collapse justify-content-center"
           id="navbarNavAltMarkup">
           <div className="navbar-nav fs-5">
             <NavLink to="/" className="nav-link">Characters</NavLink>
@@ -35,7 +35,10 @@ const Navbar = () => {
               Location
             </NavLink>
           </div>
-          <button className="btn btn-primary justify-content-end" to="" >Login</button>
+          <div className="loginRegisterContainer">
+            <Link to="/login" className="btn btn-primary justify-content-end">Login</Link>
+            <Link to="/register" className="btn btn-primary justify-content-end">Register</Link>
+          </div>
         </div>
       </div>
     </nav>

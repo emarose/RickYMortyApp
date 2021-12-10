@@ -4,6 +4,7 @@
 :root{
   --blue-clr: #00aac2;
   --green-clr: #7af717;
+  --dark-clr: #212529;
   --font-bold: 'Montserrat', sans-serif;
 }
 body {
