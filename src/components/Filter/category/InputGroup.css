@@ -1,0 +1,15 @@
+.input-group select{
+    background-color: var(--dark-clr);
+    color: #fff;
+}
+
+
+@media screen and (max-width:1000px) {
+    .pickEpisode{
+        margin: 0 auto;
+        width:60% !important;
+    }
+    .input-group{
+        width:50% !important;
+    }
+}

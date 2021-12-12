@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "../components/Card/Card";
 import InputGroup from "../components/Filter/category/InputGroup";
 import axios from "axios";
+import { GiWorld } from 'react-icons/gi';
 
 const Location = () => {
   let [results, setResults] = React.useState([]);
@@ -53,18 +54,22 @@ const Location = () => {
 
   return (
     <div className="container">
+        <div className="titleWrap mt-0 mb-5">
+          <h1 className="homeTitle text-center episodesTitle">Locations</h1>
+        </div>
       <div className="row mb-3">
-        <h1 className="text-center mb-3">
-          Location :
-          <span className="text-primary">
-            {" "}
-            {name === "" ? "Unknown" : name}
-          </span>
-        </h1>
-        <h5 className="text-center">
-          Dimension: {dimension === "" ? "Unknown" : dimension}
-        </h5>
-        <h6 className="text-center">Type: {type === "" ? "Unknown" : type}</h6>
+      
+      <div className="episodesWrapper mb-5">
+          <h2 className="text-center mb-3">
+            Episode: {" "}
+            <span className="episodeName">{name === "" ? "Unknown" : name}</span>
+          </h2>
+          <h5 className="text-center">
+          <GiWorld size="1.7rem" />  Dimension: {dimension === "" ? "Unknown" : dimension}
+          </h5>
+          <h6 className="text-center fs-4">Type: <span style={{color:"var(--blue-clr)"}}> <b> {type === "" ? "Unknown" : type}</b></span></h6>
+      </div>
+
       </div>
       <div className="row">
         <div className="col-lg-3 col-8 mb-4">

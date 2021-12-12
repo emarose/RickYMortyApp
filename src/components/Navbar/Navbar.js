@@ -25,20 +25,22 @@ const Navbar = () => {
         <div
           className="collapse navbar-collapse justify-content-center"
           id="navbarNavAltMarkup">
+          
           <div className="navbar-nav fs-5">
             <NavLink to="/" className="nav-link ">Characters</NavLink>
-            <NavLink to="/episodes" className="nav-link ">Episode</NavLink>
+            <NavLink to="/episodes" className="nav-link ">Episodes</NavLink>
             <NavLink
               activeClassName="active"
               className="nav-link "
               to="/location">
-              Location
+              Locations
             </NavLink>
-            <div className="indicator"></div>{/*  */}
+            {/* 
+            <div className="indicator"></div> */}
           </div>
           <div className="loginRegisterContainer">
-            <Link to="/login" className="btn btn-primary justify-content-end">Login</Link>
-            <Link to="/register" className="btn btn-primary justify-content-end">Register</Link>
+            <Link to="/login" className="btn justify-content-end">Login</Link>
+            <Link to="/register" className="btn justify-content-end">Register</Link>
           </div>
         </div>
       </div>

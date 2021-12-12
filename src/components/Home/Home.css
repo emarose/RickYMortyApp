@@ -2,12 +2,13 @@
   background-color: var(--dark-clr);
   margin: 5em auto;
   width: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .homeTitle {
   letter-spacing: 2px;
   font-family: var(--font-bold);
-  font-size: clamp(6rem, 5vw, 4rem);
+  font-size: clamp(8rem, 5vw, 6rem);
   background-image: url(./bg.jpg);
   background-position: center -170px;
   background-size: cover;

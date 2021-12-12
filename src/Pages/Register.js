@@ -1,12 +1,14 @@
 import React from 'react'
+import "./Register.css"
 
 function Register() {
   return (
     <>
-      <div className="container w-50">
+      <div className="container registerWrapper">
+        <h1 className='welcomeTitle mb-0'>New around here?</h1>
+        <h3 className='welcomeTitle mt-0'>Please <span className='text-white'> sign in!</span></h3>
         <form action="" method="post" role="form" autocomplete="off">
-          <div className="form-group">
-            <label for="username">Username</label>
+          <div className="my-3 form-group">
             <input
               type="text"
               name="username"
@@ -17,10 +19,15 @@ function Register() {
               value=""
               autocomplete="off"
             />
-          </div>
 
-          <div className="form-group">
-            <label for="password">Password</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              className="my-3 form-control"
+              placeholder="Email"
+              autocomplete="off"
+            />
             <input
               type="password"
               name="password"
@@ -30,48 +37,19 @@ function Register() {
               placeholder="Password"
               autocomplete="off"
             />
-          </div>
-          <div className="form-group">
-            <div className="row">
-              <div className="col-xs-7">
-                <input
-                  type="checkbox"
-                  tabindex="3"
-                  name="remember"
-                  id="remember"
-                />
-                <label for="remember">Remember Me</label>
-              </div>
-              <div className="col-xs-5 pull-right">
-                <input
-                  type="submit"
-                  name="login-submit"
-                  id="login-submit"
-                  tabindex="4"
-                  className="form-control btn btn-success"
-                  value="Log In"
-                />
-              </div>
+
+
+            <div className="col-xs-5 mt-5 pull-right">
+              <input
+                type="submit"
+                name="login-submit"
+                id="login-submit"
+                tabindex="4"
+                className="form-control btn registerBtn"
+                value="Register"
+              />
             </div>
           </div>
-          <div className="form-group">
-            <div className="row">
-              <div className="col-lg-12">
-                <div className="text-center">
-                  <a href="" tabindex="5" className="forgot-password">
-                    Forgot Password?
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <input
-            type="hidden"
-            className="hide"
-            name="token"
-            id="token"
-            value="a465a2791ae0bae853cf4bf485dbe1b6"
-          />
         </form>
       </div>
     </>

@@ -18,7 +18,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <div className="container appContainer">
+      <div className="container-fluid appContainer">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
