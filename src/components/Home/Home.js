@@ -32,8 +32,8 @@ export const Home = () => {
 
   return (
     <div className="container">
-      <div className="titleWrap">
-        <h1 className="homeTitle text-center">Rick & Morty</h1>
+      <div className="titleWrap" >
+        <h1 className="homeTitle text-center" data-aos="fade-in" >Rick & Morty</h1>
       </div>
       <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
       <div className="row">

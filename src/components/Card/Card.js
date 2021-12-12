@@ -9,7 +9,7 @@ const Card = ({ page, results }) => {
     display = results.map((x) => {
       let { id, image, name, status, location } = x;
       return (
-        <div className="container">
+        <div className="container" data-aos="flip-right">
         <Link
           id="linkCard"
           style={{ textDecoration: "none" }}

@@ -55,11 +55,11 @@ const Location = () => {
   return (
     <div className="container">
         <div className="titleWrap mt-0 mb-5">
-          <h1 className="homeTitle text-center episodesTitle">Locations</h1>
+          <h1 className="homeTitle text-center episodesTitle" data-aos="fade-in">Locations</h1>
         </div>
       <div className="row mb-3">
       
-      <div className="episodesWrapper mb-5">
+      <div className="episodesWrapper mb-5" data-aos="fade-in">
           <h2 className="text-center mb-3">
             Episode: {" "}
             <span className="episodeName">{name === "" ? "Unknown" : name}</span>
@@ -73,7 +73,7 @@ const Location = () => {
       </div>
       <div className="row">
         <div className="col-lg-3 col-8 mb-4">
-          <h4 className="text-center mb-4">Pick Location</h4>
+          <h4 className="text-center pickEpisode mb-4">Pick Location</h4>
           <InputGroup name="Location" changeID={setNumber} total={126} />
         </div>
         <div className="col-lg-9 col-12">

@@ -6,8 +6,8 @@ function Login() {
   return (
     <>
       <div className='loginWrapper text-center'>
-        <h1 className='welcomeTitle'>Welcome back!</h1>
-        <FormGroup/>
+        <h1 className='welcomeTitle' data-aos="fade-up">Welcome back!</h1>
+        <FormGroup />
       </div>
     </>
   )

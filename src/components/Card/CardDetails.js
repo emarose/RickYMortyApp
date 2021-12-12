@@ -31,13 +31,13 @@ const CardDetails = () => {
   return (
     <>
       <div className="titleWrap">
-        <h2 className="homeTitle text-center">Character Details</h2>
+        <h2 className="homeTitle text-center" data-aos="fade-right">Character Details</h2>
       </div>
-      <div className="container detailsContainer">
+      <div className="container detailsContainer" >
         <div className="imgContainer">
           <img className="img-fluid" src={image} alt="image" />
         </div>
-        <div className="info text-white">
+        <div className="info text-white"  data-aos="flip-right">
           <h1 className="text-center mb-4">{name}</h1>
 
           {(() => {

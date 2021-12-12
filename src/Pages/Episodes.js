@@ -56,13 +56,13 @@ const Episodes = () => {
     <div className="container episodesContainer">
       <div className="row mb-5">
         <div className="titleWrap mt-0 mb-5">
-          <h1 className="homeTitle text-center episodesTitle">Episodes</h1>
+          <h1 className="homeTitle text-center episodesTitle" data-aos="fade-in">Episodes</h1>
         </div>
        
-       <div className="episodesWrapper">
+       <div className="episodesWrapper" data-aos="fade-in">
           <h2 className="text-center mb-3">
             Episode name: {" "}
-            <span className="episodeName">{name === "" ? "Unknown" : name}</span>
+            <span className="episodeName" >{name === "" ? "Unknown" : name}</span>
           </h2>
           <h5 className="text-center">
             <MdDateRange size="1.7em" /> Air Date: {air_date === "" ? "Unknown" : air_date}
@@ -70,9 +70,7 @@ const Episodes = () => {
         </div>
       </div>
 
-      
       <div className="row">
-        
         <div className="col-lg-3 col-12 mb-4">
           <h4 className="text-center pickEpisode mb-4">Pick Episode</h4>
           <InputGroup name="Episode" changeID={setID} total={51} />
