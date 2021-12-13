@@ -1,57 +1,84 @@
-import React from "react";
-import { Formik } from "formik";
+import React,{useState} from "react";
+import { Formik,Form,Field,ErrorMessage } from "formik";
+import "./formGroup.css"
+import axios from "axios"
 
-
+import { useNavigate } from 'react-router-dom';
 
 function FormGroup() {
 
+  const apiUsersHTTP= axios.create({
+    baseURL:"https://api-rick-morty-bootcamp.herokuapp.com/users"
+  })
+
+  let navigate=useNavigate();
+  const [errorLogin,setErroLogin]=useState("");
+
   return (
     <>
+    <p className="error">{errorLogin}</p>
+    
       <Formik
-        onSubmit={() => {
+        onSubmit={(valores,{resetForm}) => {
+    
+          resetForm();
+          apiUsersHTTP.get()
+          .then(response=>{
+            response.data.map(el=>{
+              if(el.userName===valores.username && el.pass=== valores.pass){
+                navigate(`/`); 
+              }
+              else{
+                setErroLogin("Data is incorrect")
+              }
+            })
+          })
 
         }}
+
+        validate={(valores=>{
+          let errores={}
+          if(!valores.username){
+            errores.username="Please into your username"
+          }
+          else if(/ /.test(valores.username)){
+              errores.username="El nombre de usuario no puede terner espacio"
+          }
+          if(!valores.pass){
+            errores.pass="Please into your password"
+          }
+          return errores;
+        })}
         initialValues={{
           username: "",
           pass: ""
         }}
       >
-        {({ values, handleSubmit, handleChange }) =>
+        {({ errors }) =>
         (
-          <div className="container" onSubmit={handleSubmit}>
-            <form>
+          
+          <div className="container" >
+            <Form>
               <div className="form-floating mb-4 w-25 mx-auto">
-                <input type="text" name="username" className="form-control" id="username" placeholder="userName" velue={values.username} onChange={handleChange} />
-                <label htmlFor="username">Username</label>
+                <Field type="text" name="username" className="form-control" id="user" placeholder="userName"  />
+                <label htmlFor="user">Username</label>
+                <ErrorMessage name="username" component={()=>(
+                  <div className="error">{errors.username}</div>
+                )}/>
+                
               </div>
               <div className="form-floating mb-5 w-25 mx-auto">
-                <input type="password" name="pass" className="form-control" id="password" placeholder="Password" value={values.pass} onChange={handleChange} />
+                <Field type="password" name="pass" className="form-control" id="password" placeholder="Password"/>
                 <label htmlFor="password">Password</label>
+                <ErrorMessage name="pass" component={()=>(
+                  <div className="error">{errors.pass}</div>
+                )}/>
               </div>
               <div className="d-grid gap-2 mt-3">
                 <button className="btn registerBtn mx-auto" type="submit" >Login</button>
               </div>
-              {/* <div className="form-group">
-                  <div className="row">
-                    <div className="col-lg-12">
-                      <div className="text-center">
-                        <a href="" tabindex="5" className="forgot-password">
-                          Forgot Password?
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <input
-                  type="hidden"
-                  className="hide"
-                  name="token"
-                  id="token"
-                  value="a465a2791ae0bae853cf4bf485dbe1b6"
-                /> */}
-            </form>
+            </Form>
           </div>
-
         )
         }
       </Formik>
