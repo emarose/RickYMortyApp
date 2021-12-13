@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 function FormGroup() {
 
   const apiUsersHTTP= axios.create({
-    baseURL:"https://api-rick-morty-bootcamp.herokuapp.com/users"
+    baseURL:"https://api-rick-morty-bootcamp.herokuapp.com/verify"
   })
 
   let navigate=useNavigate();
@@ -20,47 +20,51 @@ function FormGroup() {
     
       <Formik
         onSubmit={(valores,{resetForm}) => {
-    
+          
           resetForm();
-          apiUsersHTTP.get()
+          apiUsersHTTP.post(`/${valores.username}/${valores.pass}`)
           .then(response=>{
-            response.data.map(el=>{
-              if(el.userName===valores.username && el.pass=== valores.pass){
-                navigate(`/`); 
+              if(response.data===true){
+                navigate("/");
               }
               else{
                 setErroLogin("Data is incorrect")
               }
-            })
           })
-
         }}
 
         validate={(valores=>{
           let errores={}
           if(!valores.username){
-            errores.username="Please into your username"
+            errores.username="Please enter your username"
           }
           else if(/ /.test(valores.username)){
-              errores.username="El nombre de usuario no puede terner espacio"
+              errores.username="Spaces are not valid"
           }
           if(!valores.pass){
-            errores.pass="Please into your password"
+            errores.pass="Please enter your password"
           }
           return errores;
         })}
+
         initialValues={{
           username: "",
           pass: ""
         }}
       >
+        
         {({ errors }) =>
         (
           
           <div className="container" >
             <Form>
               <div className="form-floating mb-4 w-25 mx-auto">
-                <Field type="text" name="username" className="form-control" id="user" placeholder="userName"  />
+                <Field 
+                type="text" 
+                name="username" 
+                className="form-control" 
+                id="user" 
+                placeholder="userName"  />
                 <label htmlFor="user">Username</label>
                 <ErrorMessage name="username" component={()=>(
                   <div className="error">{errors.username}</div>

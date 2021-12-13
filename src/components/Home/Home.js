@@ -6,7 +6,9 @@ import Filter from "../Filter/Filter";
 import axios from "axios";
 import './Home.css'
 
+
 export const Home = () => {
+
   let [pageNumber, updatePageNumber] = useState(1);
   let [status, updateStatus] = useState("");
   let [gender, updateGender] = useState("");

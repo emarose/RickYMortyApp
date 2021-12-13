@@ -1,46 +1,94 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import axios from "axios"
 import { Formik,Form,Field,ErrorMessage } from "formik";
 //import styles
 import "./Register.css"
 
-const apiUsersHTTP= axios.create({
-  baseURL:"https://api-rick-morty-bootcamp.herokuapp.com/users"
-})
+
 
 function Register() {
+
+  const apiUsersHTTP= axios.create({
+    baseURL:"https://api-rick-morty-bootcamp.herokuapp.com"
+  })
+  const apiUsersAddHTTP= axios.create({
+    baseURL:"https://api-rick-morty-bootcamp.herokuapp.com"
+  })
+
+  let navigate=useNavigate();
+  const [errorLogin,setErroLogin]=useState("");
   return (
     <>
+
+  <p className="error">{errorLogin}</p>
       <Formik
+
+        onSubmit={(valores,{resetForm}) => { 
+          let flag=0;
+          resetForm();
+          apiUsersHTTP.get("/users")
+          .then(response=>{
+            response.data.map(el=>{
+              if(el.username===valores.username || el.email===valores.email ){
+                flag=1
+              }
+            })
+            if(flag==0){
+              apiUsersAddHTTP.post(`/user/${valores.email}/${valores.pass}/${valores.username}`)
+              .then(response=>console.log(response))
+              navigate("/login")
+            }
+            else
+            setErroLogin("Existing user ")
+          })
+        }}
+        
+
       validate={(valores=>{
+        
         let errores={}
         if(!valores.username){
-          errores.username="Please into your username"
+          errores.username="Please enter your username"
         }
         else if(/ /.test(valores.username)){
-          errores.username="El nombre de usuario no puede terner espacio"
+          errores.username="Spaces are not valid"
         }
-        
-        
+
+        if(!valores.email){
+          errores.email="Please enter your email"
+        }
+        if(!valores.pass){
+          errores.pass="Please enter your password"
+        }
+        return errores;
       })}
-      
+
+      initialValues={{
+        username: "",
+        pass: "",
+        email:""
+      }}
       >
+
+        {({errors})=>
+        (
+
         <div className="container registerWrapper">
           <h1 data-aos="fade-left" className='welcomeTitle mb-0'>New around here?</h1>
           <h3 data-aos="fade-right"className='welcomeTitle mt-0'>Please <span className='text-white'> sign in!</span></h3>
-          <Form >
+          <Form>
             <div className="my-3 form-group">
               <Field
                 type="text"
                 name="username"
-                id="username"
-                tabindex="1"
+                id="user"
                 className="form-control"
                 placeholder="Username"
-                value=""
-                autocomplete="off"
               />
+              <ErrorMessage name='username' component={()=>(
+                <div className="error">{errors.username}</div>
+              )}/>
 
               <Field
                 type="email"
@@ -48,18 +96,21 @@ function Register() {
                 id="email"
                 className="my-3 form-control"
                 placeholder="Email"
-                autocomplete="off"
               />
+              <ErrorMessage name='email' component={()=>(
+                <div className="error">{errors.email}</div>
+              )}/>
 
               <Field
                 type="password"
-                name="password"
-                id="password"
-                tabindex="2"
+                name="pass"
+                id="pass"
                 className="form-control"
                 placeholder="Password"
-                autocomplete="off"
               />
+              <ErrorMessage name="pass" component={()=>(
+                <div className='error'>{errors.pass}</div>
+              )}/>
 
 
               <div className="col-xs-5 mt-5 pull-right">
@@ -74,6 +125,8 @@ function Register() {
             </div>
           </Form>
         </div>
+        )
+        }
       </Formik>
     </>
   )

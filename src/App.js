@@ -1,10 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
-// import Axios from "axios";
 import React, {useEffect} from "react";
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import { Home } from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import NotFound from "./Pages/NotFound";
@@ -21,15 +19,16 @@ function App() {
   useEffect(() => {
     Aos.init({duration: 1500, easing: 'ease', once: true});
   }, []);
-
+  let flag=true;
   return (
     <Router>
       <Navbar />
       <div className="container-fluid appContainer">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route exact path="/" element={<Home bandera={flag} />} />
+          
+          <Route exact path="/login"  element={<Login />} />
+          <Route exact path="/register" element={<Register />} />
 
           <Route path="/:id" element={<CardDetails />} />
           <Route path="/episodes" element={<Episodes />} />

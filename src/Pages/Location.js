@@ -14,8 +14,8 @@ const Location = () => {
 
   const rickAndMortyHTPP = axios.create({
     baseURL: `https://rickandmortyapi.com/api/location`
- });
- const rickAndMorty2HTPP = axios.create();
+  });
+  const rickAndMorty2HTPP = axios.create();
 
   let params=`${number}`;
   let url="";
