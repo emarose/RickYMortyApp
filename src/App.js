@@ -10,6 +10,7 @@ import Episodes from "./Pages/Episodes";
 import Location from "./Pages/Location";
 import Login from './Pages/Login';
 import Register from "./Pages/Register";
+import CreateCharacter from "./Pages/CreateCharacter";
 import CardDetails from "./components/Card/CardDetails";
 import Aos from 'aos';
 import "aos/dist/aos.css"
@@ -17,7 +18,7 @@ import "aos/dist/aos.css"
 
 function App() {
   useEffect(() => {
-    Aos.init({duration: 1500, easing: 'ease', once: true});
+    Aos.init({ duration: 1500, easing: 'ease', once: true });
   }, []);
   let flag=true;
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/episodes/:id" element={<CardDetails />} />
           <Route path="/location" element={<Location />} />
           <Route path="/location/:id" element={<CardDetails />} />
+          <Route path="/CreateCharacter" element={<CreateCharacter />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

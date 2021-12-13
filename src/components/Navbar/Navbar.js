@@ -9,7 +9,6 @@ const Navbar = () => {
         <Link to="/" className="navbar-brand fs-3 ubuntu">
           <h1 className="navbarBrand">Rick & Morty</h1>
         </Link>
-
         <button
           className="navbar-toggler bg-primary border-0"
           type="button"
@@ -25,9 +24,8 @@ const Navbar = () => {
         <div
           className="collapse navbar-collapse justify-content-center"
           id="navbarNavAltMarkup">
-          
           <div className="navbar-nav fs-5">
-            <NavLink to="/"  className="nav-link ">Characters</NavLink>
+            <NavLink to="/" className="nav-link ">Characters</NavLink>
             <NavLink to="/episodes" className="nav-link ">Episodes</NavLink>
             <NavLink
               activeClassName="active"

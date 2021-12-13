@@ -57,13 +57,11 @@ button[aria-expanded="true"]>.open {
     border-radius: 8px;
     transition: 0.3s ;
 }
-
 .loginRegisterContainer a:hover{
     color:var(--blue-clr) !important;
     background-color: var(--dark-clr);
     outline: 1px solid var(--blue-clr);
 }
-
 .nav-link{
     border-radius: 20px;
     color: var(--blue-clr) !important;
@@ -71,7 +69,6 @@ button[aria-expanded="true"]>.open {
     margin: 0 10px;
     transition: 0.7s all;
 }
-
 .active{
     border-bottom: 8px solid var(--blue-clr);
     border-top: 8px solid var(--blue-clr);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "../Button/Button";
+import { Link } from "react-router-dom"
 import "./Search.css";
 
 const Search = ({ setSearch, updatePageNumber }) => {
@@ -16,8 +16,7 @@ const Search = ({ setSearch, updatePageNumber }) => {
         className="searchInput"
         type="text"
       />
-   
-      <Button class="searchBTN btn btn-primary fs-5" content="+" />
+      <Link to="/CreateCharacter" className="searchBTN btn btn-primary fs-5">+Add Character</Link>
     </form>
   );
 };
