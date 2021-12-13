@@ -3,7 +3,7 @@ import "./InputGroup.css"
 
 const InputGroup = ({ name, changeID, total }) => {
   return (
-    <div className="input-group mb-3 w-75 mx-auto">
+    <div className="input-group">
       <select
         onChange={(e) => changeID(e.target.value)}
         className="form-select"
