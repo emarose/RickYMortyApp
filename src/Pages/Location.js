@@ -61,7 +61,7 @@ const Location = () => {
       
       <div className="episodesWrapper mb-5" data-aos="fade-in">
           <h2 className="text-center mb-3">
-            Episode: {" "}
+            Location: {" "}
             <span className="episodeName">{name === "" ? "Unknown" : name}</span>
           </h2>
           <h5 className="text-center">

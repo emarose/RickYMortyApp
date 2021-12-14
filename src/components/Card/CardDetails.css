@@ -6,7 +6,7 @@
   align-items: center;
   margin-bottom: 20vh;
   border-radius: 5px;
-
+  position: relative;
 }
 .detailsContainer .imgContainer{
   height: 100%;
@@ -57,6 +57,12 @@
 
 .unknownIcon {
   color: rgb(161, 161, 161);
+}
+
+.goBack{
+  position: absolute;
+  top: 11px;
+  left: 10px;
 }
 
 @media screen and (max-width:1000px) {

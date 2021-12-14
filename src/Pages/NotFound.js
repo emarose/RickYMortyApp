@@ -1,6 +1,6 @@
-import React from 'react'
-import img from './NotFound.jpg'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import img from './NotFound.jpg';
+import { Link } from 'react-router-dom';
 
 function NotFound() {
   const notFound = {

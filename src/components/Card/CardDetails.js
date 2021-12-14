@@ -5,6 +5,7 @@ import axios from "axios";
 import { AiOutlineQuestionCircle } from 'react-icons/ai';
 import { GiChewedSkull } from 'react-icons/gi';
 import { CgMediaLive } from 'react-icons/cg';
+import { Link } from 'react-router-dom';
 
 const CardDetails = () => {
 
@@ -34,6 +35,7 @@ const CardDetails = () => {
         <h2 className="homeTitle text-center" data-aos="fade-right">Character Details</h2>
       </div>
       <div className="container detailsContainer" >
+        <Link to="/" className="btn btn-outline-primary goBack">Go back</Link>
         <div className="imgContainer">
           <img className="img-fluid" src={image} alt="image" />
         </div>
