@@ -4,9 +4,7 @@ import axios from "axios";
 import "./CreateCharacter.css"
 
 function CreateCharacter() {
-    let [results, setResults] = React.useState([]);
     let [info, setInfo] = useState([]);
-    let { dimension, type, name } = info;
     let [number, setNumber] = useState(1);
 
     // let api = `https://rickandmortyapi.com/api/location/${number}`;
@@ -18,26 +16,16 @@ function CreateCharacter() {
 
     let params = `${number}`;
     let url = "";
-    let aux = [];
 
     useEffect(() => {
         (async function () {
-
-            await rickAndMortyHTPP.get(`${params}`)
+            await rickAndMortyHTPP.get()
                 .then(response => {
-                    setInfo(response.data)
+                    setInfo(response.data.results)
                     url = response.data.residents;
                 })
-
-            await url.map((el) => {
-
-                rickAndMorty2HTPP.get(el)
-                    .then(response => {
-                        aux = [...aux, response.data]
-                        setResults(aux);
-                    })
-            })
-        })();
+        })
+            ();
     }, [params]);
 
     return (
@@ -87,9 +75,23 @@ function CreateCharacter() {
                             <option value="11">Unknown</option>
                         </select>
                         <label className="my-3 label-style">Origin:</label>
-                        <InputGroup className="colapse-location" name="Location" changeID={setNumber} total={126} />
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected disabled>Choose...</option>
+                            {info.map(location => {
+                                return (
+                                    <option value={location.name}>{location.name}</option>
+                                )
+                            })}
+                        </select>
                         <label className="my-3 label-style">Last Location:</label>
-                        <InputGroup className="colapse-location" name="Location" changeID={setNumber} total={126} />
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected disabled>Choose...</option>
+                            {info.map(location => {
+                                return (
+                                    <option value={location.name}>{location.name}</option>
+                                )
+                            })}
+                        </select>
                         <div className="col-xs-5 mt-5 pull-right">
                             <input
                                 type="submit"
