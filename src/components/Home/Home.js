@@ -31,11 +31,13 @@ export const Home = () => {
   }, [rickAndMortyHTPP, params]);
 
   return (
-    <div className="container">
-      <div className="titleWrap" >
+    <div className="container homeContainer">
+      <div className="titleWrap">
         <h1 className="homeTitle text-center" data-aos="fade-in" >Rick & Morty</h1>
       </div>
+      <div className="search">
       <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
+      </div>
       <div className="row">
         <Filter
           pageNumber={pageNumber}

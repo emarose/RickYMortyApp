@@ -3,7 +3,7 @@ import './css/filterBTN.css';
 
 const FilterBTN = ({ input, task, updatePageNumber, index, name }) => {
   return (
-    <div>
+    <>
       <div className="form-check">
         <input
           className="form-check-input x"
@@ -22,7 +22,7 @@ const FilterBTN = ({ input, task, updatePageNumber, index, name }) => {
           {input}
         </label>
       </div>
-    </div>
+    </>
   );
 };
 

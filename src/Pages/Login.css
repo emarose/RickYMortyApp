@@ -22,9 +22,7 @@
     color: var(--blue-clr);
     margin-bottom: 1em;
 }
-.btnLogin{
-    
-}
+
 @media screen and (max-width:1000px) {
     .registerWrapper input{
         width:100%;

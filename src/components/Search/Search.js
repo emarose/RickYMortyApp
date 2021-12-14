@@ -16,7 +16,7 @@ const Search = ({ setSearch, updatePageNumber }) => {
         className="searchInput"
         type="text"
       />
-      <Link to="/CreateCharacter" className="searchBTN btn btn-primary fs-5">+Add Character</Link>
+      <Link to="/CreateCharacter" className="btn searchBtn">New Character</Link>
     </form>
   );
 };

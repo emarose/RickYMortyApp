@@ -87,7 +87,7 @@ function Register() {
                 placeholder="Username"
               />
               <ErrorMessage name='username' component={()=>(
-                <div className="error">{errors.username}</div>
+                <h2 className="error">{errors.username}</h2>
               )}/>
 
               <Field
@@ -98,7 +98,7 @@ function Register() {
                 placeholder="Email"
               />
               <ErrorMessage name='email' component={()=>(
-                <div className="error">{errors.email}</div>
+                <h2 className="error">{errors.email}</h2>
               )}/>
 
               <Field
@@ -109,7 +109,7 @@ function Register() {
                 placeholder="Password"
               />
               <ErrorMessage name="pass" component={()=>(
-                <div className='error'>{errors.pass}</div>
+                <h2 className='error'>{errors.pass}</h2>
               )}/>
 
 

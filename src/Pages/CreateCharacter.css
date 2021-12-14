@@ -18,6 +18,7 @@
     transition: 0.4s all;
     background-color: var(--blue-clr);
     font-size: 1.1rem;
+    width: 50%;
 }
 .createBtn:hover{
     background-color: var(--dark-clr);
@@ -25,13 +26,13 @@
     outline: 1px solid var(--blue-clr)
 }
 .form-container{
-    background-color: #212529;
-    display: inline-block;
+    background-color: var(--dark-clr);
     align-items: center;
     padding: 20px;
-    border-radius: 20px;
-    width: 30rem;
+    border-radius: 10px;
+    width: 25rem;
 }
+
 .colapse-location{
     margin: 0;
 }

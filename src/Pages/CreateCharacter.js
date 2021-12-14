@@ -31,29 +31,28 @@ function CreateCharacter() {
     return (
         <>
             <div className="container createWrapper">
-                <h1 data-aos="fade-left" className='welcomeTitle mb-0'>Whant To Add A New Character?</h1>
-                <h3 data-aos="fade-right" className='welcomeTitle mt-0'>Please <span className='text-white'>Enter His Details Below</span></h3>
+                <h3 data-aos="fade-right" className='welcomeTitle mt-5'><span className='text-white'>Add a new character</span></h3>
                 <form action="" method="post" role="form" autocomplete="off">
-                    <div className="my-5 form-container">
+                    <div className="my-0 form-container" data-aos="flip-left">
                         <input
                             type="text"
                             name="name"
                             id="name"
                             tabindex="1"
                             className="my-3 form-control"
-                            placeholder="Enter the Name Here"
+                            placeholder="Character name"
                             autocomplete="off"
                         />
                         <label className="my-3 label-style">Status:</label>
                         <select class="form-select" aria-label="Default select example">
-                            <option selected disabled>Choose...</option>
+                            <option selected disabled>Set the character status...</option>
                             <option value="1">Live</option>
                             <option value="2">Dead</option>
                             <option value="3">Unknown</option>
                         </select>
                         <label className="my-3 label-style">Gender:</label>
                         <select class="form-select" aria-label="Default select example">
-                            <option selected disabled>Choose...</option>
+                            <option selected disabled>Set the character gender...</option>
                             <option value="1">Male</option>
                             <option value="2">Female</option>
                             <option value="3">Genderles</option>
@@ -61,7 +60,7 @@ function CreateCharacter() {
                         </select>
                         <label className="my-3 label-style">Species:</label>
                         <select class="form-select" aria-label="Default select example">
-                            <option selected disabled>Choose...</option>
+                            <option selected disabled>Set the character species...</option>
                             <option value="1">Human</option>
                             <option value="2">Alien</option>
                             <option value="3">Humanoid</option>
@@ -76,7 +75,7 @@ function CreateCharacter() {
                         </select>
                         <label className="my-3 label-style">Origin:</label>
                         <select class="form-select" aria-label="Default select example">
-                            <option selected disabled>Choose...</option>
+                            <option selected disabled>Set the character origin...</option>
                             {info.map(location => {
                                 return (
                                     <option value={location.name}>{location.name}</option>
@@ -85,7 +84,7 @@ function CreateCharacter() {
                         </select>
                         <label className="my-3 label-style">Last Location:</label>
                         <select class="form-select" aria-label="Default select example">
-                            <option selected disabled>Choose...</option>
+                            <option selected disabled>Set the character location...</option>
                             {info.map(location => {
                                 return (
                                     <option value={location.name}>{location.name}</option>
