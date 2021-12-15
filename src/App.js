@@ -50,6 +50,7 @@ function App() {
           <Route path="/CreateCharacter" element={user.username!="" ? <CreateCharacter />: <Login/>} />
           <Route path="/CreateLocation" element={user.username!="" ?<CreateLocation />: <Login/>} />
           <Route path="/EditUser" element={user.username!="" ? <EditUser />: <Login/>} />
+          <Route path="/EditCharacter" element={user.username!="" ?<EditCharacter />:<Login/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
