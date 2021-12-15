@@ -6,13 +6,13 @@ import { GiWorld } from 'react-icons/gi';
 import CreateLocation from './CreateLocation';
 import Search from '../components/Search/SearchLocation';
 
+
 const Location = () => {
   let [results, setResults] = React.useState([]);
   let [info, setInfo] = useState([]);
   let { dimension, type, name } = info;
   let [number, setNumber] = useState(1);
-
-  // let api = `https://rickandmortyapi.com/api/location/${number}`;
+  
 
   const rickAndMortyHTPP = axios.create({
     baseURL: `https://rickandmortyapi.com/api/location`
@@ -41,16 +41,6 @@ const Location = () => {
           })
       })
 
-      // let data = await fetch(api).then((res) => res.json());
-      // setInfo(data);
-
-      // let a = await Promise.all(
-      //   data.residents.map((x) => {
-
-      //     return fetch(x).then((res) => res.json());
-      //   })
-      // );
-      // setResults(a);
     })();
   }, [params]);
 

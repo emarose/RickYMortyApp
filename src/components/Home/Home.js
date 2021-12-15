@@ -30,7 +30,9 @@ export const Home = () => {
   }, [rickAndMortyHTPP, params]);
 
   return (
+
     <div className="container homeContainer">
+      
       <div className="titleWrap">
         <h1 className="homeTitle text-center" data-aos="fade-in" >Rick & Morty</h1>
       </div>

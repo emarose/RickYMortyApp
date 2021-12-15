@@ -5,7 +5,7 @@ import axios from "axios"
 
 import { useNavigate } from 'react-router-dom';
 
-function FormGroup() {
+function FormGroup({set}) {
 
   const apiUsersHTTP= axios.create({
     baseURL:"https://api-rick-morty-bootcamp.herokuapp.com/verify"
@@ -19,12 +19,19 @@ function FormGroup() {
     <p className="error">{errorLogin}</p>
     
       <Formik
-        onSubmit={(valores,{resetForm}) => {
+        onSubmit={async(valores,{resetForm}) => {
           
           resetForm();
-          apiUsersHTTP.post(`/${valores.username}/${valores.pass}`)
+          await apiUsersHTTP.post(`/${valores.username}/${valores.pass}`)
           .then(response=>{
               if(response.data===true){
+                set(user=>{
+                  return({
+                    ...user,
+                    username:valores.username,
+                    pass:valores.pass
+                  })
+                })
                 navigate("/");
               }
               else{
