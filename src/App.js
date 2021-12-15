@@ -11,6 +11,7 @@ import Location from "./Pages/Location";
 import Login from './Pages/Login';
 import Register from "./Pages/Register";
 import CreateCharacter from "./Pages/CreateCharacter";
+import CreateLocation from "./Pages/CreateLocation";
 import CardDetails from "./components/Card/CardDetails";
 import Aos from 'aos';
 import "aos/dist/aos.css"
@@ -37,6 +38,7 @@ function App() {
           <Route path="/location" element={<Location />} />
           <Route path="/location/:id" element={<CardDetails />} />
           <Route path="/CreateCharacter" element={<CreateCharacter />} />
+          <Route path="/CreateLocation" element={<CreateLocation />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>

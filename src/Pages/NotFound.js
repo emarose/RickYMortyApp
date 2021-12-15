@@ -15,7 +15,7 @@ function NotFound() {
       <div className="container" style={notFound}>
         <img src={img} alt="not found" />
         <h1 className='my-5'>Uh oh! The page you are looking for does not exist!</h1>
-        <Link to="/">Go back</Link>
+        <Link to="/" className='btn btn-primary'>Go back</Link>
       </div> 
     </>
   )
