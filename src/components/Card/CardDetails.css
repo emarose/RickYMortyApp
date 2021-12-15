@@ -64,7 +64,11 @@
   top: 11px;
   left: 10px;
 }
-
+.edit{
+  position: absolute;
+  top: 11px;
+  right: 10px;
+}
 @media screen and (max-width:1000px) {
   .detailsContainer{
     flex-direction: column;

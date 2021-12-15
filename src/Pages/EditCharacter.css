@@ -1,7 +1,7 @@
 .editWrapper{
-    min-height: 80vh;
+    min-height:100vh;
     background-image: url(./CreateCharacterBG.jpg);
-    width: 75%;
+    width: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -14,13 +14,13 @@
     justify-content: center;
     gap: 1.5em;
 }
-.editBtn{
+.createBtn{
     transition: 0.4s all;
     background-color: var(--blue-clr);
     font-size: 1.1rem;
     width: 50%;
 }
-.editBtn:hover{
+.createBtn:hover{
     background-color: var(--dark-clr);
     color: #fff;
     outline: 1px solid var(--blue-clr)
