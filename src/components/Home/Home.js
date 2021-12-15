@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Search from '../Search/Search'
+import Search from '../Search/Search';
 import Card from "../Card/Card";
 import Pagination from "../Pagination/Pagination";
 import Filter from "../Filter/Filter";
 import axios from "axios";
 import './Home.css'
-
 
 export const Home = () => {
 
@@ -36,7 +35,7 @@ export const Home = () => {
         <h1 className="homeTitle text-center" data-aos="fade-in" >Rick & Morty</h1>
       </div>
       <div className="search">
-      <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
+        <Search setSearch={setSearch} updatePageNumber={updatePageNumber} />
       </div>
       <div className="row">
         <Filter

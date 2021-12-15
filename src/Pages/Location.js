@@ -3,6 +3,8 @@ import Card from "../components/Card/Card";
 import InputGroup from "../components/Filter/category/InputGroup";
 import axios from "axios";
 import { GiWorld } from 'react-icons/gi';
+import CreateLocation from './CreateLocation';
+import Search from '../components/Search/SearchLocation';
 
 const Location = () => {
   let [results, setResults] = React.useState([]);
@@ -17,27 +19,27 @@ const Location = () => {
   });
   const rickAndMorty2HTPP = axios.create();
 
-  let params=`${number}`;
-  let url="";
-  let aux=[];
+  let params = `${number}`;
+  let url = "";
+  let aux = [];
 
   useEffect(() => {
     (async function () {
 
       await rickAndMortyHTPP.get(`${params}`)
-      .then(response=>{
-        setInfo(response.data)
-        url=response.data.residents;
-      })
+        .then(response => {
+          setInfo(response.data)
+          url = response.data.residents;
+        })
 
-     await url.map((el)=>{
+      await url.map((el) => {
 
-      rickAndMorty2HTPP.get(el)
-      .then(response=>{
-        aux=[...aux,response.data]
-        setResults(aux);
+        rickAndMorty2HTPP.get(el)
+          .then(response => {
+            aux = [...aux, response.data]
+            setResults(aux);
+          })
       })
-     })
 
       // let data = await fetch(api).then((res) => res.json());
       // setInfo(data);
@@ -70,6 +72,7 @@ const Location = () => {
           <h6 className="text-center fs-4">Type: <span style={{color:"var(--blue-clr)"}}> <b> {type === "" ? "Unknown" : type}</b></span></h6>
       </div>
 
+      <Search/>
       </div>
       <div className="row">
         <div className="col-lg-3 col-8 mb-4">
