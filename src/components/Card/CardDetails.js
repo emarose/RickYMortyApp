@@ -36,10 +36,11 @@ const CardDetails = () => {
       </div>
       <div className="container detailsContainer" >
         <Link to="/" className="btn btn-outline-primary goBack">Go back</Link>
+        <Link to="/EditCharacter" className="btn btn-outline-primary edit">Edit</Link>
         <div className="imgContainer">
           <img className="img-fluid" src={image} alt="image" />
         </div>
-        <div className="info text-white"  data-aos="flip-right">
+        <div className="info text-white" data-aos="flip-right">
           <h1 className="text-center mb-4">{name}</h1>
 
           {(() => {

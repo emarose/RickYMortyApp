@@ -12,6 +12,7 @@ import Login from './Pages/Login';
 import Register from "./Pages/Register";
 import CreateCharacter from "./Pages/CreateCharacter";
 import CreateLocation from "./Pages/CreateLocation";
+import EditCharacter from "./Pages/EditCharacter";
 import CardDetails from "./components/Card/CardDetails";
 import EditUser from "./Pages/EditUser";
 import Aos from 'aos';
@@ -34,6 +35,7 @@ function App() {
           <Route exact path="/register" element={<Register />} />
 
           <Route path="/:id" element={<CardDetails />} />
+          <Route path="/EditCharacter" element={<EditCharacter />} />
           <Route path="/episodes" element={<Episodes />} />
           <Route path="/episodes/:id" element={<CardDetails />} />
           <Route path="/location" element={<Location />} />
