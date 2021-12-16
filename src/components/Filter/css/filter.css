@@ -37,11 +37,12 @@
 }
 
 .accordion-item{
-  background-color: var(--dark-clr);
+  border: 1px solid var(--dark-clr);
+  background-color: #fff;
 }
 
 .accordion-item *{
-  color: #fff;
+  color: var(--dark-clr);
 }
 .accordion-item *:hover{
   color: var(--blue-clr);
@@ -50,7 +51,11 @@
   background-color: rgba(0, 170, 194, 0.1);
 }
 .form-check label{
+  border: 1px solid var(--dark-clr);
   margin: 0.5em 0.5em;
+}
+.form-check label:hover{
+ background-color: var(--dark-clr);
 }
 
 .clearFilters {

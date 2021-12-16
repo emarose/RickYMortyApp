@@ -34,9 +34,8 @@ const CardDetails = () => {
       <div className="titleWrap">
         <h2 className="homeTitle text-center" data-aos="fade-right">Character Details</h2>
       </div>
+
       <div className="container detailsContainer" >
-        <Link to="/" className="btn btn-outline-primary goBack">Go back</Link>
-        <Link to="/EditCharacter" className="btn btn-outline-primary edit">Edit</Link>
         <div className="imgContainer">
           <img className="img-fluid" src={image} alt="image" />
         </div>
@@ -78,8 +77,19 @@ const CardDetails = () => {
               {species}
             </li>
           </ul>
+          <ul>
+          <li>
+            <Link to="/EditCharacter" className="btn editBtn">Edit</Link>
+
+          
+        </li>
+        </ul>
         </div>
+ 
       </div>
+      <div className="text-center">
+          <Link to="/" className="btn goBackBtn">Go back</Link>
+          </div>
     </>
   );
 

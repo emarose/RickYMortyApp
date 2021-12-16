@@ -41,8 +41,8 @@ function EditCharacter() {
     return (
         <>
             <div className="container editWrapper">
-                <h3 data-aos="fade-right" className='welcomeTitle mt-5'><span className='text-white'>Modify your character</span></h3>
-                <form action="" method="post" role="form" autocomplete="off">
+                <h3 data-aos="fade-right" className='welcomeTitle mt-5'>Modify character</h3>
+                <form action="" className="mb-5" method="post" role="form" autocomplete="off">
                     <div className="my-0 form-container" data-aos="flip-left">
                         <h1 className="text-center mb-4 text-light" value={info}>{name}</h1>
                         <label className="my-3 label-style">Status:</label>
@@ -93,7 +93,7 @@ function EditCharacter() {
                                 )
                             })}
                         </select>
-                        <div className="col-xs-5 mt-5 pull-right">
+                        <div className="col-xs-5 text-center mt-5 pull-right">
                             <input
                                 type="submit"
                                 name="edit-submit"

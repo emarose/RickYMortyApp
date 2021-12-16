@@ -12,7 +12,7 @@ function Login() {
   return (
     <>
       <div className='loginWrapper text-center'>
-        <h1 className='welcomeTitle' data-aos="fade-up">Welcome back!</h1>
+        <h1 className='welcomeTitle' data-aos="fade-left">Welcome back!</h1>
         <FormGroup set={setUser}/>
       </div>
     </>

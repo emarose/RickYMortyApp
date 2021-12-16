@@ -75,8 +75,7 @@ function Register() {
         (
 
         <div className="container registerWrapper">
-          <h1 data-aos="fade-left" className='welcomeTitle mb-0'>New around here?</h1>
-          <h3 data-aos="fade-right"className='welcomeTitle mt-0'>Please <span className='text-white'> sign in!</span></h3>
+          <h3 data-aos="fade-right" className='welcomeTitle'>Sign in</h3>
           <Form>
             <div className="my-3 form-group">
               <Field

@@ -4,7 +4,7 @@
   min-height: 55vh;
   display: flex;
   align-items: center;
-  margin-bottom: 20vh;
+  margin-bottom: 5vh;
   border-radius: 5px;
   position: relative;
 }
@@ -58,16 +58,19 @@
 .unknownIcon {
   color: rgb(161, 161, 161);
 }
-
-.goBack{
-  position: absolute;
-  top: 11px;
-  left: 10px;
+.goBackBtn{
+  margin-bottom: 5vh;
+  border: 1px solid var(--dark-clr);
 }
-.edit{
-  position: absolute;
-  top: 11px;
-  right: 10px;
+.goBackBtn:hover{
+  outline: 1px solid  var(--blue-clr);
+  background-color: var(--dark-clr);
+  color: var(--blue-clr)
+}
+.editBtn{
+  
+  width: fit-content;
+
 }
 @media screen and (max-width:1000px) {
   .detailsContainer{
