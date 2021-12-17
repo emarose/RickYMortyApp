@@ -21,7 +21,7 @@ function Register() {
   return (
     <>
 
-  <p className="error">{errorLogin}</p>
+  <div className="error">{errorLogin}</div>
       <Formik
 
         onSubmit={(valores,{resetForm}) => { 
@@ -75,9 +75,9 @@ function Register() {
         (
 
         <div className="container registerWrapper">
-          <h3 data-aos="fade-right" className='welcomeTitle'>Sign in</h3>
+          <h3 data-aos="fade-right" className='welcomeTitle'>New Around here? <br /><span className='text-white'>Sign in</span></h3>
           <Form>
-            <div className="my-3 form-group">
+            <div className="form-floating my-3 form-group">
               <Field
                 type="text"
                 name="username"
@@ -85,10 +85,11 @@ function Register() {
                 className="form-control"
                 placeholder="Username"
               />
+              <label htmlFor="user">Username</label>
               <ErrorMessage name='username' component={()=>(
-                <h2 className="error">{errors.username}</h2>
+                <div className="error">{errors.username}</div>
               )}/>
-
+             <div className="form-floating mb-4 mx-auto">
               <Field
                 type="email"
                 name="email"
@@ -96,10 +97,12 @@ function Register() {
                 className="my-3 form-control"
                 placeholder="Email"
               />
-              <ErrorMessage name='email' component={()=>(
-                <h2 className="error">{errors.email}</h2>
-              )}/>
-
+             <label htmlFor="email">Email</label>
+                <ErrorMessage name='email' component={()=>(
+                  <div className="error">{errors.email}</div>
+                )}/>
+              </div>
+              <div className="form-floating mb-5 mx-auto">
               <Field
                 type="password"
                 name="pass"
@@ -110,7 +113,8 @@ function Register() {
               <ErrorMessage name="pass" component={()=>(
                 <h2 className='error'>{errors.pass}</h2>
               )}/>
-
+              <label htmlFor="pass">Password</label>
+            </div>
 
               <div className="col-xs-5 mt-5 pull-right">
                 <button

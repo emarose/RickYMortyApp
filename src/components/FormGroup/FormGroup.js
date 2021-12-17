@@ -63,9 +63,9 @@ function FormGroup({set}) {
         {({ errors }) =>
         (
           
-          <div className="container" >
-            <Form>
-              <div className="form-floating mb-4 w-25 mx-auto">
+          <div className="container formContainer">
+            <Form >
+              <div className="form-floating w-50 mb-4 mx-auto">
                 <Field 
                 type="text" 
                 name="username" 
@@ -78,7 +78,7 @@ function FormGroup({set}) {
                 )}/>
                 
               </div>
-              <div className="form-floating mb-5 w-25 mx-auto">
+              <div className="form-floating w-50 mb-5 mx-auto">
                 <Field type="password" name="pass" className="form-control" id="password" placeholder="Password"/>
                 <label htmlFor="password">Password</label>
                 <ErrorMessage name="pass" component={()=>(
