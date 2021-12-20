@@ -39,7 +39,6 @@ function App() {
             <Route exact path="/" element={user.username != "" ? <Home usuario={user} /> : <Login />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/register" element={<Register />} />
-
             <Route path="/:id" element={user.username != "" ? <CardDetails /> : <Login />} />
             <Route path="/episodes" element={user.username != "" ? <Episodes /> : <Login />} />
             <Route path="/episodes/:id" element={user.username != "" ? <CardDetails /> : <Login />} />

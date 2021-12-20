@@ -13,7 +13,6 @@ const CardDetails = () => {
   let [axiosData, setAxios] = useState([]);
   let { name, location, origin, gender, image, status, species } = axiosData;
 
-
   const rickAndMortyHTPP = axios.create({
     baseURL: `https://rickandmortyapi.com/api/character`
   });
@@ -78,18 +77,18 @@ const CardDetails = () => {
             </li>
           </ul>
           <ul>
-          <li>
-            <Link to="/EditCharacter" className="btn editBtn">Edit</Link>
+            <li>
+              <Link to="/EditCharacter" className="btn editBtn">Edit</Link>
 
-          
-        </li>
-        </ul>
+
+            </li>
+          </ul>
         </div>
- 
+
       </div>
       <div className="text-center">
-          <Link to="/" className="btn goBackBtn">Go back</Link>
-          </div>
+        <Link to="/" className="btn goBackBtn">Go back</Link>
+      </div>
     </>
   );
 
