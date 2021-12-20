@@ -12,7 +12,7 @@ const FilterBTN = ({ input, task, updatePageNumber, index, name }) => {
           id={`${name}-${index}`}
         />
         <label
-          onClick={() => {
+          onClick={(x) => {
             task(input);
             updatePageNumber(1);
           }}

@@ -17,45 +17,44 @@ import CardDetails from "./components/Card/CardDetails";
 import EditUser from "./Pages/EditUser";
 import Aos from 'aos';
 import "aos/dist/aos.css"
-import { UserProvider,useUsuario } from "./Context/UserContext";
-
-export default()=> <UserProvider>
+import { UserProvider, useUsuario } from "./Context/UserContext";
+export default () => <UserProvider>
   <App></App>
 </UserProvider>
 
 function App() {
-  const [user]=useUsuario(); 
+  const [user] = useUsuario();
 
   useEffect(() => {
     Aos.init({ duration: 1500, easing: 'ease', once: true });
   }, []);
-  
+
   return (
     <>
-      
-    <Router>
-      <Navbar />
-      <div className="container-fluid appContainer">
-        <Routes>
-          <Route exact path="/" element={ user.username!="" ? <Home usuario={user}/>: <Login/>} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/register" element={<Register />} />
 
-          <Route path="/:id" element={user.username!="" ?<CardDetails />:<Login/> } />
-          <Route path="/episodes" element={user.username!="" ?<Episodes />:<Login/>} />
-          <Route path="/episodes/:id" element={user.username!="" ? <CardDetails />: <Login/>} />
-          <Route path="/location" element={user.username!="" ? <Location />: <Login/>} />
-          <Route path="/location/:id" element={user.username!="" ? <CardDetails />: <Login/>} />
-          <Route path="/CreateCharacter" element={user.username!="" ? <CreateCharacter />: <Login/>} />
-          <Route path="/CreateLocation" element={user.username!="" ?<CreateLocation />: <Login/>} />
-          <Route path="/EditUser" element={user.username!="" ? <EditUser />: <Login/>} />
-          <Route path="/EditCharacter" element={user.username!="" ?<EditCharacter />:<Login/>} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
-    </Router>
+      <Router>
+        <Navbar users={user} />
+        <div className="container-fluid appContainer">
+          <Routes>
+            <Route exact path="/" element={user.username != "" ? <Home usuario={user} /> : <Login />} />
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/register" element={<Register />} />
+
+            <Route path="/:id" element={user.username != "" ? <CardDetails /> : <Login />} />
+            <Route path="/episodes" element={user.username != "" ? <Episodes /> : <Login />} />
+            <Route path="/episodes/:id" element={user.username != "" ? <CardDetails /> : <Login />} />
+            <Route path="/location" element={user.username != "" ? <Location /> : <Login />} />
+            <Route path="/location/:id" element={user.username != "" ? <CardDetails /> : <Login />} />
+            <Route path="/CreateCharacter" element={user.username != "" ? <CreateCharacter /> : <Login />} />
+            <Route path="/CreateLocation" element={user.username != "" ? <CreateLocation /> : <Login />} />
+            <Route path="/EditUser" element={user.username != "" ? <EditUser /> : <Login />} />
+            <Route path="/EditCharacter" element={user.username != "" ? <EditCharacter /> : <Login />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+      </Router>
     </>
-  ); 
+  );
 }
 
 
