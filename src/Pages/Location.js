@@ -3,6 +3,7 @@ import Card from "../components/Card/Card";
 import InputGroup from "../components/Filter/category/InputGroup";
 import axios from "axios";
 import { GiWorld } from 'react-icons/gi';
+import "./Location.css"
 
 const Location = () => {
   let [results, setResults] = React.useState([]);
@@ -61,11 +62,11 @@ const Location = () => {
 
       </div>
       <div className="row">
-        <div className="col-lg-3 col-8 mb-4">
+        <div className="locationSelect col-lg-3 col-12 mb-4">
           <h4 className="text-center pickEpisode mb-4">Pick Location</h4>
           <InputGroup name="Location" changeID={setNumber} total={126} />
         </div>
-        <div className="col-lg-9 col-12">
+        <div className="col-lg-8 col-12">
           <div className="gridContainer">
             <Card page="/location/" results={results} />
           </div>

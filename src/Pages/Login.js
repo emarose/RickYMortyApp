@@ -18,8 +18,10 @@ function Login() {
           <FormGroup set={setUser} />
           <br />
           <hr />
-          <h2 className='welcomeTitle' data-aos="fade-right">Are you not registered yet?</h2>
-          <Link to="/register" className="btn registerBtn mx-auto justify-content-end">Register Now</Link>
+          <div className='registerContainer'>
+            <h2 className='welcomeTitle' data-aos="fade-right">Are you not registered yet?</h2>
+            <Link to="/register" className="btn registerBtn mx-auto justify-content-end">Register Now</Link>
+          </div>
         </div>
       </div>
     </>

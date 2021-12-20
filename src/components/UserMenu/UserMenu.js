@@ -22,9 +22,9 @@ const UserMenu = ({ data }) => {
                 >
                 </button>
                 <ul class="dropdown-menu menu-list " aria-labelledby="dropdownMenuButton">
-                    <li><span>{data.username}</span></li>
+                    <li><span className="userData">{data.username}</span></li>
                     <hr />
-                    <li><span>{data.email}</span></li>
+                    <li><span className="userData">{data.email}</span></li>
                     <hr />
                     <li><Link to="/login" onClick={resetUser} id="close-sesion-btn" className="justify-content-end">Cerrar Sesión</Link></li>
                 </ul>

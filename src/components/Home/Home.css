@@ -1,8 +1,5 @@
 .homeContainer{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto;
 }
 .titleWrap {
   background-color: var(--dark-clr);
@@ -14,7 +11,7 @@
 .homeTitle {
   letter-spacing: 2px;
   font-family: var(--font-bold);
-  font-size: clamp(8rem, 5vw, 6rem);
+  font-size: 8rem;
   background-image: url(./bg.jpg);
   background-position: center -170px;
   background-size: cover;
@@ -22,27 +19,27 @@
   color: rgba(255, 255, 255, 0.4);
 }
 
-@media screen and(max-width:500px) {
-  .homeTitle {
-    font-size: smaller;
-  }
+.filterContainer {
+  display: flex;
 }
 
 .gridContainer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px 0;
+  gap: 30px 30px;
 }
 
-.filterContainer {
-  display: flex;
+@media screen and (max-width:500px) {
+  .homeTitle {
+    font-size: 6rem;
+  }
 }
 
 @media screen and (max-width:1000px) {
   .gridContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
+    gap: 10px 10px;
   }
 
   .filterContainer {

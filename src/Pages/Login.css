@@ -22,5 +22,8 @@
     .registerWrapper input{
         width:100%;
     }
+    .registerContainer{
+        margin-bottom: 100px;
+    }
 
 }

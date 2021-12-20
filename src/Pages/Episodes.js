@@ -39,16 +39,6 @@ const Episodes = () => {
             setResults(aux);
           })
       })
-
-      // let data = await fetch(api).then((res) => res.json());
-      // setInfo(data);
-
-      // let a = await Promise.all(
-      //   data.characters.map((x) => {
-      //     return fetch(x).then((res) => res.json());
-      //   })
-      // );
-      // setResults(a);
     })();
   }, [params]);
 
@@ -58,8 +48,8 @@ const Episodes = () => {
         <div className="titleWrap mt-0 mb-5">
           <h1 className="homeTitle text-center episodesTitle" data-aos="fade-in">Episodes</h1>
         </div>
-       
-       <div className="episodesWrapper" data-aos="fade-in">
+
+        <div className="episodesWrapper" data-aos="fade-in">
           <h2 className="text-center mb-3">
             Episode name: {" "}
             <span className="episodeName" >{name === "" ? "Unknown" : name}</span>
@@ -71,7 +61,7 @@ const Episodes = () => {
       </div>
 
       <div className="row">
-        <div className="col-lg-3 col-12 mb-4">
+        <div className="episodeSelect col-lg-3 col-12 mb-4">
           <h4 className="text-center pickEpisode mb-4">Pick Episode</h4>
           <InputGroup name="Episode" changeID={setID} total={51} />
         </div>

@@ -32,5 +32,8 @@
 #close-sesion-btn{
     background-color: var(--bs-gray-500);
     padding: 10px 10px;
+    text-decoration: none;
 }
-
+.userData{
+    font-weight: bold;
+}

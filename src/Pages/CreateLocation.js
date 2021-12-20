@@ -12,7 +12,7 @@ function CreateCharacter() {
     const rickAndMortyHTPP = axios.create({
         baseURL: `https://rickandmortyapi.com/api/location`
     });
-    
+
     const rickAndMorty2HTPP = axios.create();
 
     let params = `${number}`;
@@ -98,7 +98,7 @@ function CreateCharacter() {
                                 name="create-submit"
                                 id="create-submit"
                                 tabindex="6"
-                                className="form-control btn createBtn"
+                                className="form-control btn createLocationBtn"
                                 value="Create"
                             />
                         </div>

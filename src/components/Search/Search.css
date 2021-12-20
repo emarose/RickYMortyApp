@@ -1,5 +1,5 @@
 .searchInput {
-  width: 100%;
+  width: 40%;
   transition: 0.2s;
   border: none;
   outline: 2px solid var(--blue-clr);
@@ -31,8 +31,8 @@
   outline: 1px solid var(--blue-clr);
 }
 
-@media (max-width: 576px) {
-  .input {
-    width: 100%;
+@media screen and (max-width:1000px) {
+  .searchInput {
+    width: 70%;
   }
 }

@@ -84,30 +84,6 @@ button[aria-expanded="true"]>.open {
    outline: none !important;
 }
 
-/* 
-.indicator{
-    content:'';
-    position:absolute;
-    background-color: #212529;
-    border-top: var(--blue-clr) 4px solid;
-    border-bottom: var(--blue-clr) 4px solid;
-    transition: 0.3s;
-    width: 24%;
-    height: 49px;
-    top: 0;
-    left: 60px;
-    z-index: 0;
-}
-.navbar-nav a:nth-child(1).active ~ .indicator{
-    transform: translateX(calc(100% * 0));
-}
-.navbar-nav a:nth-child(2).active ~ .indicator{
-    transform: translateX(calc(100% * 1));
-}
-.navbar-nav a:nth-child(3).active ~ .indicator{
-    transform: translateX(calc(96% * 2));
-} */
-
 @media screen and (max-width:1000px) {
 
     .userContainer{
